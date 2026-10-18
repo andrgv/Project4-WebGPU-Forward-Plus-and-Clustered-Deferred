@@ -8,7 +8,7 @@ WebGL Forward+ and Clustered Deferred Shading
 * **Google Chrome for Testing v157.0.8102.0** on
   Linux, 13th Gen Intel(R) Core(TM) i9-13980HX @ 5.6GHz 128GB, RTX 2000 Ada Generation 8GB (Personal)
 
-![1792293346044](image/README/1792293346044.png)
+![1792294097671](image/README/1792294097671.png)
 
 ### Live Demo
 
@@ -17,7 +17,6 @@ WebGL Forward+ and Clustered Deferred Shading
 ### Demo Video/GIF
 
 ![1792292429144](image/README/1792292429144.gif)
-
 
 #### Naive
 
