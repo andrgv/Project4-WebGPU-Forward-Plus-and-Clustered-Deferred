@@ -4,8 +4,11 @@ WebGL Forward+ and Clustered Deferred Shading
 **University of Pennsylvania, CIS 565: GPU Programming and Architecture, Project 4**
 
 * Andrea Gonzalez Varela
-* Tested on: (TODO) **Google Chrome for Testing v157.0.8102.0** on
+* Tested on:
+* **Google Chrome for Testing v157.0.8102.0** on
   Linux, 13th Gen Intel(R) Core(TM) i9-13980HX @ 5.6GHz 128GB, RTX 2000 Ada Generation 8GB (Personal)
+
+![1792293346044](image/README/1792293346044.png)
 
 ### Live Demo
 
@@ -35,6 +38,8 @@ This project implements 3 versions of a real-time lighting pipeline using WebGPU
 The first is the naive renderer, which evaluates every active light for every fragment. The second is forward plus, which divides the camera frustrum into a 16x16x16 grid of cluters, with a compute shader determining which lights overlap each cluster so that a fragment shader can evaluate only the relevant lights for each point. Finally, the clustered deferred implementation first does a geometrt pass that stores albedo and world-space normals in a G-buffer and writes scene depth, then does a fullscreen lighting pass that uses this data to reconstruct the view-space and evaluates the lights assigned to each pixel's cluster.
 
 ### Performance Analysis
+
+![1792293269057](image/README/1792293269057.png)
 
 ![1792285010583](image/README/1792285010583.png)
 
