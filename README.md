@@ -13,6 +13,7 @@ WebGL Forward+ and Clustered Deferred Shading
 
 ![1792292429144](image/README/1792292429144.gif)
 
+
 #### Naive
 
 ![1792283860608](image/README/1792283860608.gif)
@@ -54,7 +55,9 @@ As the number of lights increase, the naive renderer's frame time grows most rap
 
 While the frame time of the forward plus implementation grows more slowly, it still underperforms  the clustered deferred implementation. This indicates that the cost of testing every light against every cluster, and the cost of preprocessing the lighting list of each cluster.
 
-Clustered deferred performs the best by a wide margin. This indicates that optimizations are succesful at reducing the processing required especially at higher light counts, especially because the lighting is determined in a fullscreen pass after visibility is resolved, which reduces the number of iterations required for geometry hidden behind other surfaces. However the implementation does require additional memory bandwith for albedo, normal and depth textures, so the results observed might be different if run on different hardware.
+Clustered deferred performs the best by a large margin. This indicates that optimizations are succesful at reducing the processing required especially at higher light counts, especially because the lighting is determined in a fullscreen pass after visibility is resolved, which reduces the number of iterations required for geometry hidden behind other surfaces. However the implementation does require additional memory bandwith for albedo, normal and depth textures, so the results observed might be different if run on different hardware.
+
+One way to improve the current implementation would be to reduce the cost of light clustering. In the current implementation, every cluster tests every active light, so clustering cost grows with both the number of clusters and the number of lights. A more efficient implementation could first divide lights into coarse screen-space regions or calculate the range of clusters overlapped by each light. This would avoid testing lights against clusters they cannot affect.
 
 ### Credits
 
