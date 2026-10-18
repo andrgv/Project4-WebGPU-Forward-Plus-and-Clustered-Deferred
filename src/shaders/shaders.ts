@@ -36,7 +36,7 @@ export const constants = {
     clustersY: 16,
     clustersZ: 16,
     clusterWorkgroupSize: 128,
-    lightsClusterCapacity: 128,
+    lightsClusterCapacity: 8000,
     
     nearPlane: Camera.nearPlane,
     farPlane: Camera.farPlane,
